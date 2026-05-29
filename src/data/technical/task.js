@@ -1,0 +1,87 @@
+export const technicalTask = {
+    name: "Technical Department",
+    subtitle: "Frontend Development Track",
+    badges: [
+      { label: "Technical Department", color: "blue" },
+      { label: "Frontend Task", color: "cyan" },
+      { label: "Second Year Only", color: "orange" },
+    ],
+    overview: `This task is designed to evaluate your capability as a frontend developer, your understanding of the technology stack you choose, and your intellectual honesty when using AI tools. You will build a technical reference website for the C programming language curriculum followed in the first year at Thapar Institute of Engineering and Technology — covering every concept from data types to file handling — with clean explanations, working code examples, and zero gaps.`,
+    overviewExtra: `The website must be completely self-contained, publicly hosted, and representative of what a first-year student would need to master C programming.`,
+    overviewNote: `The Technical Department builds products, tools, and learning resources for the campus technology community. This task simulates real work — quality, clarity, and ownership matter here.`,
+    taskStatement: `Build a C Programming Language Reference Website — a complete, interactive, and well-structured frontend that covers the full first-year C curriculum under "Programming for Problem Solving" at Thapar Institute of Engineering and Technology. The site must function as a standalone guide a student can use to learn, revise, and understand C programming from scratch to intermediate level.`,
+    curriculumNote: `Your website must cover the complete C programming syllabus as taught under the "Programming for Problem Solving" course at Thapar Institute of Engineering and Technology. This includes all topics from fundamentals (data types, operators, control flow) through intermediate concepts (functions, arrays, strings, pointers, structures) to advanced topics (dynamic memory allocation, file I/O, and the preprocessor). Every major topic must appear on the site with clear explanations and working code examples. Missing even one major section is grounds for disqualification.`,
+    conditions: [
+      {
+        title: "Technology Stack Transparency",
+        description: "You may use any frontend technology stack — plain HTML/CSS/JavaScript, React, Vue, Svelte, Next.js, Astro, or anything else you are comfortable with. There is no restriction. However, you must clearly declare your choices and demonstrate that you actually understand them.",
+        checklist: [
+          "A short write-up (approximately 150 words) explaining why you chose your stack — not simply \"I know it\" but what specific features made it appropriate for this project.",
+          "Your project must have a clear folder structure, explained in your README.",
+          "At least one component or page must demonstrate actual framework knowledge (routing, state management, component reuse, or templating — whatever applies to your stack).",
+        ],
+        sampleQuestions: [
+          "Why did you use this framework over vanilla JavaScript?",
+          "What is the build process for your stack?",
+          "How does the feature you used work internally?",
+          "How would you add a search feature to this site?",
+        ],
+        tip: "Simple vanilla HTML and CSS done exceptionally well beats a React application you barely understand. Pick what you can own completely.",
+      },
+      {
+        title: "AI Usage Policy",
+        description: "You may use AI tools (GitHub Copilot, Claude, ChatGPT, and similar) in your workflow. AI is a real tool in modern development and we will not pretend otherwise. However: if you used AI, own it, and prove you understand what it produced.",
+        checklist: [
+          "Declare in your README which parts were AI-assisted.",
+          "Be prepared to modify any AI-generated code live during the review session.",
+          "Be able to explain every line of code in your submission, regardless of its origin.",
+        ],
+        sampleQuestions: [
+          "This CSS grid layout — explain how auto-fill differs from auto-fit here.",
+          "Change this section's color scheme on the spot.",
+          "Add a dark/light toggle — how would you approach it?",
+          "This code uses async/await — rewrite it with .then() chains.",
+        ],
+        warning: "If you cannot explain your own code, cannot make basic modifications, or clearly have no understanding of what the AI generated — you will not proceed. This is non-negotiable. Using AI is acceptable. Not understanding what you submitted is not.",
+      },
+      {
+        title: "Content Quality and Accuracy",
+        description: "The website is a technical teaching resource. Every concept must be explained correctly. If a first-year student follows your explanations and writes incorrect C code as a result — that is your responsibility.",
+        checklist: [
+          "All code examples must compile and run without errors.",
+          "Explanations must be in your own words — not copied from existing tutorial websites.",
+          "Each topic must include: concept explanation, at least one working code example, and expected output.",
+          "Pointer and memory sections must be especially precise — these are the most common confusion points.",
+          "Complex topics (recursion, dynamic memory, file I/O) should have at least two progressively harder examples.",
+        ],
+      },
+    ],
+    submission: [
+      "Public GitHub Repository — clean commit history with meaningful commit messages (not a single \"final\" commit).",
+      "Live Deployment URL — hosted on GitHub Pages, Vercel, Netlify, Cloudflare Pages, or any other free hosting platform. Must be accessible without login.",
+      "README.md — technology stack justification, folder structure, instructions to run locally, AI disclosure (if applicable), and your name and roll number.",
+      "You will be called for a 15–20 minute live review session where you must explain your code and make live changes on request.",
+    ],
+    evaluation: [
+      { name: "Content Completeness", points: 30, percentage: 100, description: "All curriculum units covered with correct explanations and working examples." },
+      { name: "Technical Depth and Accuracy", points: 25, percentage: 83, description: "Code examples compile and run correctly, explanations are accurate, edge cases mentioned." },
+      { name: "Code Quality and Understanding", points: 25, percentage: 83, description: "Clean code, good structure, ability to explain everything in the review, ability to make live changes." },
+      { name: "User Interface and Experience", points: 10, percentage: 33, description: "Navigation, readability, mobile responsiveness, visual clarity." },
+      { name: "Bonus Features", points: "+10", percentage: 33, description: "Search functionality, interactive code playground, dark mode, animations, accessibility.", isBonus: true },
+    ],
+    recommendations: [
+      "Test every code snippet before placing it on the site",
+      "Use syntax highlighting (Prism.js, Highlight.js, or Shiki)",
+      "Make it navigable with a sidebar or table of contents",
+      "Write meaningful commit messages throughout development",
+      "Disclose AI usage clearly in your README",
+      "Study what you built thoroughly before the review session",
+    ],
+    avoidList: [
+      "Submitting a single-page text dump with no navigation",
+      "Copying content from existing tutorial websites verbatim",
+      "Using broken or untested code examples",
+      "Submitting with a private GitHub repository",
+      "Hiding AI usage then failing to explain your own code",
+    ],
+  };

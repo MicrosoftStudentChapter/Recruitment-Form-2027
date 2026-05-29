@@ -383,18 +383,28 @@ export default function RecruitmentForm() {
                       initial={{ opacity: 0, y: 10 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: 0.2 }}
-                      className="p-5 rounded-2xl bg-brand-blue/10 border border-brand-blue/30 space-y-3"
+                      className="rounded-2xl bg-brand-blue/10 border border-brand-blue/30 overflow-hidden"
                     >
-                      <div className="flex items-center gap-2">
-                        <span className="text-xs font-bold uppercase tracking-widest text-brand-blue">📌 {selectedDepartment.name} Task</span>
+                      <div className="h-32 sm:h-40 w-full relative">
+                        <img 
+                          src={selectedDepartment.image} 
+                          alt={`${selectedDepartment.name} Department`}
+                          className="w-full h-full object-cover"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-[#0f172a] via-transparent to-transparent" />
                       </div>
-                      <p className="text-sm text-slate-200 leading-relaxed">{selectedDepartment.taskSummary}</p>
-                      <a 
-                        href={`/tasks/${selectedDepartment.id}`} 
-                        className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-brand-blue/20 border border-brand-blue/40 text-brand-blue text-sm font-medium hover:bg-brand-blue/30 transition-all"
-                      >
-                        View Full Task Guide →
-                      </a>
+                      <div className="p-5 pt-2 space-y-3">
+                        <div className="flex items-center gap-2">
+                          <span className="text-xs font-bold uppercase tracking-widest text-brand-blue">📌 {selectedDepartment.name} Task</span>
+                        </div>
+                        <p className="text-sm text-slate-200 leading-relaxed">{selectedDepartment.taskSummary}</p>
+                        <a 
+                          href={`/tasks/${selectedDepartment.id}`} 
+                          className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-brand-blue/20 border border-brand-blue/40 text-brand-blue text-sm font-medium hover:bg-brand-blue/30 transition-all"
+                        >
+                          View Full Task Guide →
+                        </a>
+                      </div>
                     </motion.div>
 
                     {/* Primary Submission Links */}
@@ -538,17 +548,27 @@ export default function RecruitmentForm() {
                       className="overflow-hidden space-y-6 mt-4"
                     >
                       {/* Task Summary Card */}
-                      <div className="p-5 rounded-2xl bg-brand-blue/10 border border-brand-blue/30 space-y-3">
-                        <div className="flex items-center gap-2">
-                          <span className="text-xs font-bold uppercase tracking-widest text-brand-blue">📌 {selectedSecondary.name} Task</span>
+                      <div className="rounded-2xl bg-brand-blue/10 border border-brand-blue/30 overflow-hidden">
+                        <div className="h-32 sm:h-40 w-full relative">
+                          <img 
+                            src={selectedSecondary.image} 
+                            alt={`${selectedSecondary.name} Department`}
+                            className="w-full h-full object-cover"
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-[#0f172a] via-transparent to-transparent" />
                         </div>
-                        <p className="text-sm text-slate-200 leading-relaxed">{selectedSecondary.taskSummary}</p>
-                        <a 
-                          href={`/tasks/${selectedSecondary.id}`} 
-                          className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-brand-blue/20 border border-brand-blue/40 text-brand-blue text-sm font-medium hover:bg-brand-blue/30 transition-all"
-                        >
-                          View Full Task Guide →
-                        </a>
+                        <div className="p-5 pt-2 space-y-3">
+                          <div className="flex items-center gap-2">
+                            <span className="text-xs font-bold uppercase tracking-widest text-brand-blue">📌 {selectedSecondary.name} Task</span>
+                          </div>
+                          <p className="text-sm text-slate-200 leading-relaxed">{selectedSecondary.taskSummary}</p>
+                          <a 
+                            href={`/tasks/${selectedSecondary.id}`} 
+                            className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-brand-blue/20 border border-brand-blue/40 text-brand-blue text-sm font-medium hover:bg-brand-blue/30 transition-all"
+                          >
+                            View Full Task Guide →
+                          </a>
+                        </div>
                       </div>
 
                       {/* Secondary Management Question */}

@@ -1,3 +1,4 @@
+// Main Recruitment Form component handling user input, validation, and dynamic task guide rendering.
 "use client";
 
 import { useState, useEffect } from "react";
@@ -5,8 +6,9 @@ import { useForm, useFieldArray } from "react-hook-form";
 import { motion, AnimatePresence } from "framer-motion";
 import { CheckCircle2, Plus, Trash2, Link as LinkIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { departments } from "@/data/departments";
-import { submitApplication } from "@/lib/api";
+import { departments, taskData } from "@/data";
+import { submitApplication } from "@/lib/apiController";
+import TaskController from "@/components/TaskController";
 
 function SectionBadge({ number }) {
   return (
@@ -65,6 +67,7 @@ export default function RecruitmentForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
   const [submitError, setSubmitError] = useState("");
+  const [activeTaskGuide, setActiveTaskGuide] = useState(null);
 
   const allData = watch();
 
@@ -138,6 +141,18 @@ export default function RecruitmentForm() {
           Thank you for applying to the Microsoft Learn Student Chapter. We will review your application and get back to you soon.
         </p>
       </motion.div>
+    );
+  }
+
+  if (activeTaskGuide) {
+    return (
+      <TaskController 
+        task={taskData[activeTaskGuide]} 
+        onClose={() => {
+          setActiveTaskGuide(null);
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }} 
+      />
     );
   }
 
@@ -398,12 +413,13 @@ export default function RecruitmentForm() {
                           <span className="text-xs font-bold uppercase tracking-widest text-brand-blue">📌 {selectedDepartment.name} Task</span>
                         </div>
                         <p className="text-sm text-slate-200 leading-relaxed">{selectedDepartment.taskSummary}</p>
-                        <a 
-                          href={`/tasks/${selectedDepartment.id}`} 
+                        <button 
+                          type="button"
+                          onClick={() => setActiveTaskGuide(selectedDepartment.id)} 
                           className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-brand-blue/20 border border-brand-blue/40 text-brand-blue text-sm font-medium hover:bg-brand-blue/30 transition-all"
                         >
                           View Full Task Guide →
-                        </a>
+                        </button>
                       </div>
                     </motion.div>
 
@@ -562,12 +578,13 @@ export default function RecruitmentForm() {
                             <span className="text-xs font-bold uppercase tracking-widest text-brand-blue">📌 {selectedSecondary.name} Task</span>
                           </div>
                           <p className="text-sm text-slate-200 leading-relaxed">{selectedSecondary.taskSummary}</p>
-                          <a 
-                            href={`/tasks/${selectedSecondary.id}`} 
+                          <button 
+                            type="button"
+                            onClick={() => setActiveTaskGuide(selectedSecondary.id)} 
                             className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-brand-blue/20 border border-brand-blue/40 text-brand-blue text-sm font-medium hover:bg-brand-blue/30 transition-all"
                           >
                             View Full Task Guide →
-                          </a>
+                          </button>
                         </div>
                       </div>
 

@@ -1,4 +1,4 @@
-// Backend API configuration and utilities
+// Handles backend integration and API calls for the recruitment application.
 // Change this URL to point to your actual backend
 
 const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || "https://your-backend-url.com/api";

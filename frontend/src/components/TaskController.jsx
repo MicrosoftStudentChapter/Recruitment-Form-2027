@@ -1,6 +1,7 @@
+// Controller component responsible for rendering individual task guides and instructions inline.
 "use client";
 
-import Link from "next/link";
+
 import Image from "next/image";
 import { cn } from "@/lib/utils";
 
@@ -82,7 +83,7 @@ function ScoreBar({ name, points, pct, desc, isBonus }) {
   );
 }
 
-export default function TaskPageClient({ task }) {
+export default function TaskController({ task, onClose }) {
   return (
     <div className="min-h-screen bg-[#020617] text-[#e8f4ff] relative">
 
@@ -275,9 +276,9 @@ export default function TaskPageClient({ task }) {
           <p className="font-semibold text-[#9ec8f0]">Microsoft Learn Student Community — Thapar Institute of Engineering & Technology</p>
           <p className="mt-1">{task.name} · Second Year Recruitment 2026–27</p>
           <p className="mt-3 text-xs italic text-[#6a9ec0]">&ldquo;Build something you can explain. Understand everything you submit.&rdquo;</p>
-          <Link href="/" className="inline-block mt-6 px-5 py-2.5 rounded-xl bg-[#0078d4]/20 border border-[#0078d4]/40 text-[#60b8ff] text-sm font-medium hover:bg-[#0078d4]/30 transition-all">
+          <button onClick={onClose} type="button" className="inline-block mt-6 px-5 py-2.5 rounded-xl bg-[#0078d4]/20 border border-[#0078d4]/40 text-[#60b8ff] text-sm font-medium hover:bg-[#0078d4]/30 transition-all">
             ← Back to Application Form
-          </Link>
+          </button>
         </footer>
       </div>
     </div>

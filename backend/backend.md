@@ -21,35 +21,23 @@ The frontend must interact with the backend API to submit recruitment applicatio
 The frontend should send a JSON payload matching this structure:
 ```json
 {
-  "personalInfo": {
-    "fullName": "String",
-    "email": "String",
-    "rollNumber": "String",
-    "phone": "String"
-  },
-  "previousSocieties": [
-    {
-      "society": "String",
-      "role": "String"
-    }
+  "fullName": "String",
+  "email": "String",
+  "rollNumber": "String",
+  "phone": "String",
+  "societies": "String",
+  "societyRole": "String",
+  "whyJoin": "String",
+  "difference": "String",
+  "department": "String",
+  "submissionLinks": [
+    { "type": "String", "url": "String" }
   ],
-  "writtenResponses": {
-    "whyJoin": "String",
-    "difference": "String"
-  },
-  "primaryDepartment": {
-    "department": "String",
-    "links": [
-      { "type": "String", "url": "String" }
-    ]
-  },
-  "secondaryDepartment": {
-    "department": "String | null",
-    "links": [
-      { "type": "String", "url": "String" }
-    ],
-    "managementPlan": "String | null"
-  }
+  "secondaryDepartment": "String | null",
+  "secondaryManagement": "String | null",
+  "secondarySubmissionLinks": [
+    { "type": "String", "url": "String" }
+  ]
 }
 ```
 
